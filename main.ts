@@ -19,7 +19,7 @@ namespace kagaradio {
 
             return buf[0];
         }
-        private INIT6955(): void{
+        INIT6955(): void{
             this.DSP6955WReg(0x00, 0x80);
             this.DSP6955WReg(0x07, 0x31);
             this.DSP6955WReg(0x09, 0x07);
