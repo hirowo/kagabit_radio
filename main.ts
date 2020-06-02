@@ -1,5 +1,10 @@
 //% weight=70 icon="\uf075" color=#00FF00 block="ラジオ"
 namespace kagaradio {
+    const FM = 1;
+    const AM = 2;
+    let mode : number;
+    let ch : number;
+
     export class DSP6955 {
         private DSP6955WReg(addr: number, cmd: number) {
             let buf: Buffer = pins.createBuffer(2);
@@ -25,10 +30,19 @@ namespace kagaradio {
             this.DSP6955WReg(0x00, 0x80);
             this.DSP6955WReg(0x07, 0x31);
             this.DSP6955WReg(0x09, 0x07);
+            mode = FM;
        
         }
-        SetFreq(): void{
+        //% blockId=radio_setfreq block="%strip| 周波数設定"
+        //% advanced=true
+        SetFreq(Freq :number): void{
             
+            if(mode  == FM){
+                ch = ((((Freq*100)-3000)*10)/25);
+            }
+            else {
+                ch = ((Freq*100) / 9)*3;
+            }
         }
     }
 
