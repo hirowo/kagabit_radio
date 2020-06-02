@@ -24,7 +24,7 @@ namespace kagaradio {
 
             return buf[0];
         }
-        //% blockId=radio_init block | 初期化"
+        //% blockId=radio_init block ="初期化"
         //% advanced=true
         INIT6955(): void{
             this.DSP6955WReg(0x00, 0x80);
@@ -33,7 +33,7 @@ namespace kagaradio {
             mode = FM;
        
         }
-        //% blockId=radio_setfreq block="%numver| 周波数設定"
+        //% blockId=radio_setfreq block="周波数設定 %Freq "
         //% advanced=true
         
         SetFreq(Freq :number): void{
