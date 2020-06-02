@@ -11,7 +11,7 @@ namespace kagaradio {
             buf[0] = addr;
             buf[1] = cmd;
 
-            pins.i2cWriteBuffer(0x20, buf, false);
+            pins.i2cWriteBuffer(0x0, buf, false);
         }
         private DSP6955RReg(addr: number): number {
             let buf: Buffer = pins.createBuffer(1);
@@ -24,7 +24,7 @@ namespace kagaradio {
 
             return buf[0];
         }
-        //% blockId=radio_init block="%strip| 初期化"
+        //% blockId=radio_init block | 初期化"
         //% advanced=true
         INIT6955(): void{
             this.DSP6955WReg(0x00, 0x80);
@@ -35,6 +35,7 @@ namespace kagaradio {
         }
         //% blockId=radio_setfreq block="%numver| 周波数設定"
         //% advanced=true
+        
         SetFreq(Freq :number): void{
             
             if(mode  == FM){
