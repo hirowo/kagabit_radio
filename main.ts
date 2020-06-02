@@ -19,11 +19,16 @@ namespace kagaradio {
 
             return buf[0];
         }
+        //% blockId=radio_init block="%strip| 初期化"
+        //% advanced=true
         INIT6955(): void{
             this.DSP6955WReg(0x00, 0x80);
             this.DSP6955WReg(0x07, 0x31);
             this.DSP6955WReg(0x09, 0x07);
        
+        }
+        SetFreq(): void{
+            
         }
     }
 
