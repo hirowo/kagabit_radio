@@ -33,7 +33,7 @@ namespace kagaradio {
         dsp.DSP6955WReg(0x00, 0x80);
         dsp.DSP6955WReg(0x07, 0x31);
         dsp.DSP6955WReg(0x09, 0x07);
-        mode = 1;
+        mode = FM;
        
     }
 
