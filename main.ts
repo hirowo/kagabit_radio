@@ -25,7 +25,6 @@ namespace kagaradio {
             return buf[0];
         }
         //% blockId=radio_init block ="初期化"
-        //% advanced=true
         INIT6955(): void{
             this.DSP6955WReg(0x00, 0x80);
             this.DSP6955WReg(0x07, 0x31);
@@ -35,7 +34,6 @@ namespace kagaradio {
         }
         //% blockId=radio_setfreq block="周波数設定  %f "
          //% Freq.min=0 Freq.max=89
-        //% advanced=true
         
         SetFreq(Freq :number): void{
             
@@ -46,7 +44,15 @@ namespace kagaradio {
                 ch = ((Freq*100) / 9)*3;
             }
         }
-    }
+        //% blockId=radio_setfreq block="%strip|show single number|%dispData|at digit|%bitAddr"
+        //% dispData.min=0 dispData.max=9
+        //% bitAddr.min=0 bitAddr.max=3
+        bit(dispData: number, bitAddr: number) {
+            if ((dispData == 0x7f) || ((dispData <= 9) && (bitAddr <= 3))) {
+                let segData = 0;
 
+            }
+        }        
+    }
 }
 
