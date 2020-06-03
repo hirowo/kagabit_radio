@@ -44,14 +44,10 @@ namespace kagaradio {
                 ch = ((Freq*100) / 9)*3;
             }
         }
-        //% blockId=radio_testfreq block="|周波数|%dispData|at digit|%bitAddr"
+        //% blockId=radio_testfreq block="周波数 %freq"
         //% dispData.min=0 dispData.max=9
         //% bitAddr.min=0 bitAddr.max=3
-        bit(dispData: number, bitAddr: number) {
-            if ((dispData == 0x7f) || ((dispData <= 9) && (bitAddr <= 3))) {
-                let segData = 0;
-
-            }
+        bit(freq: number) {
         }        
     }
 }
