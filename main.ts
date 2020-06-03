@@ -6,14 +6,14 @@ namespace kagaradio {
     let ch : number;
 
     export class DSP6955 {
-        private DSP6955WReg(addr: number, cmd: number) {
+        DSP6955WReg(addr: number, cmd: number) {
             let buf: Buffer = pins.createBuffer(2);
             buf[0] = addr;
             buf[1] = cmd;
 
             pins.i2cWriteBuffer(0x0, buf, false);
         }
-        private DSP6955RReg(addr: number): number {
+        DSP6955RReg(addr: number): number {
             let buf: Buffer = pins.createBuffer(1);
 
             buf[0] = addr;
@@ -24,22 +24,19 @@ namespace kagaradio {
 
             return buf[0];
         }
-        //% blockId=radio_init block ="初期化"
-        INIT6955(): void{
-            this.DSP6955WReg(0x00, 0x80);
-            this.DSP6955WReg(0x07, 0x31);
-            this.DSP6955WReg(0x09, 0x07);
-            mode = FM;
-       
-        }
-        //% blockId=radio_setfreq block="周波数設定  %f "
-         //% Freq.min=0 Freq.max=89
-        
-        SetFreq(Freq :number): void{
-            
-        }
-   
+ 
     }
+
+    let dsp: DSP6955;
+    //% blockId=radio_init block ="初期化"
+    export function INIT6955(): void {
+        dsp.DSP6955WReg(0x00, 0x80);
+        dsp.DSP6955WReg(0x07, 0x31);
+        dsp.DSP6955WReg(0x09, 0x07);
+        mode = FM;
+       
+    }
+
     //% blockId=radio_testfreq block="周波数%Freq"
     //% Freq.min=60.5Freq.max=90.5f
     export function bit(Freq: number) {
