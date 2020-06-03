@@ -44,7 +44,7 @@ namespace kagaradio {
                 ch = ((Freq*100) / 9)*3;
             }
         }
-        //% blockId=radio_testfreq block="%strip|show single number|%dispData|at digit|%bitAddr"
+        //% blockId=radio_testfreq block="周波数|%dispData|at digit|%bitAddr"
         //% dispData.min=0 dispData.max=9
         //% bitAddr.min=0 bitAddr.max=3
         bit(dispData: number, bitAddr: number) {
