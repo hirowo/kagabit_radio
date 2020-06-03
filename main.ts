@@ -47,7 +47,7 @@ namespace kagaradio {
    
     }
     //% blockId=radio_testfreq block="周波数%freq"
-    //% freq.min=0 freq.max=9
+    //% freq.min=60.5 freq.max=90.5
     export function bit(freq: number) {
     }     
 }
