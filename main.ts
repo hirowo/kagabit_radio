@@ -45,9 +45,8 @@ namespace kagaradio {
             }
         }
         //% blockId=radio_testfreq block="周波数 %freq"
-        //% dispData.min=0 dispData.max=9
-        //% bitAddr.min=0 bitAddr.max=3
-        bit(freq: number) {
+        //% freq.min=0 freq.max=9
+       bit(freq: number) {
         }        
     }
 }
