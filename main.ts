@@ -37,18 +37,19 @@ namespace kagaradio {
         
         SetFreq(Freq :number): void{
             
-            if(mode  == FM){
-                ch = ((((Freq*100)-3000)*10)/25);
-            }
-            else {
-                ch = ((Freq*100) / 9)*3;
-            }
         }
    
     }
-    //% blockId=radio_testfreq block="周波数%freq"
-    //% freq.min=60.5 freq.max=90.5
-    export function bit(freq: number) {
+    //% blockId=radio_testfreq block="周波数%Freq"
+    //% Freq.min=60.5Freq.max=90.5f
+    export function bit(Freq: number) {
+        if (mode == FM) {
+            ch = ((((Freq * 100) - 3000) * 10) / 25);
+        }
+        else {
+            ch = ((Freq * 100) / 9) * 3;
+        }
+
     }     
 }
 
