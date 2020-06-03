@@ -33,7 +33,7 @@ namespace kagaradio {
             mode = FM;
        
         }
-        //% blockId=radio_setfreq block="周波数設定 %Freq %v "
+        //% blockId=radio_setfreq block="周波数設定  %f "
          //% Freq.min=0 Freq.max=89
         //% advanced=true
         
