@@ -10,8 +10,7 @@ namespace kagaradio {
             let buf: Buffer = pins.createBuffer(2);
             buf[0] = addr;
             buf[1] = cmd;
-
-            pins.i2cWriteBuffer(0x0, buf, false);
+            pins.i2cWriteBuffer(0x20, buf, false);
         }
         DSP6955RReg(addr: number): number {
             let buf: Buffer = pins.createBuffer(1);
@@ -30,9 +29,9 @@ namespace kagaradio {
     let dsp: DSP6955;
     //% blockId=radio_init block="初期化 "
     export function Init6955(): void {
-//        dsp.DSP6955WReg(0x00, 0x80);
-  //      dsp.DSP6955WReg(0x07, 0x31);
-    //    dsp.DSP6955WReg(0x09, 0x07);
+ /*       dsp.DSP6955WReg(0x00, 0x80);
+        dsp.DSP6955WReg(0x07, 0x31);
+        dsp.DSP6955WReg(0x09, 0x07);*/
         mode = FM;
        
     }
