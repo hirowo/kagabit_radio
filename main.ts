@@ -10,16 +10,16 @@ namespace kagaradio {
             let buf: Buffer = pins.createBuffer(2);
             buf[0] = addr;
             buf[1] = cmd;
-            pins.i2cWriteBuffer(0x20, buf, false);
+            pins.i2cWriteBuffer(0x10, buf, false);
         }
         DSP6955RReg(addr: number): number {
             let buf: Buffer = pins.createBuffer(1);
 
             buf[0] = addr;
 
-            pins.i2cWriteBuffer(0x20, buf, false);
+            pins.i2cWriteBuffer(0x10, buf, false);
 
-            buf = pins.i2cReadBuffer(0x20, 1, false);
+            buf = pins.i2cReadBuffer(0x10, 1, false);
 
             return buf[0];
         }
