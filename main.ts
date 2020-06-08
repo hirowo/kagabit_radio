@@ -28,7 +28,7 @@ namespace kagaradio {
     }
 
     let dsp: DSP6955;
-    //% blockId=radio_init block="初期化 %v"
+    //% blockId=radio_init block="初期化 "
     export function INIT6955(): void {
         dsp.DSP6955WReg(0x00, 0x80);
         dsp.DSP6955WReg(0x07, 0x31);
