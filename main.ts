@@ -23,6 +23,11 @@ namespace kagaradio {
 
             return buf[0];
         }
+        DSP6955Tune(mode : number){
+          this.DSP6955WReg(0, 0xc0);
+          this.DSP6955WReg(0, 0xd0);
+          this.DSP6955WReg(0, 0xc0);  
+        }
  
     }
 
