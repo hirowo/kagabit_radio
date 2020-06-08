@@ -31,8 +31,8 @@ namespace kagaradio {
     export function Init6955(): void {
         let dsp = new DSP6955;
         dsp.DSP6955WReg(0x00, 0x80);
- //       dsp.DSP6955WReg(0x07, 0x31);
- //       dsp.DSP6955WReg(0x09, 0x07);
+        dsp.DSP6955WReg(0x07, 0x31);
+        dsp.DSP6955WReg(0x09, 0x07);
         mode = FM;
        
     }
