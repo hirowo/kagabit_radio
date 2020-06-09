@@ -53,7 +53,7 @@ namespace kagaradio {
             ch = ((Freq * 100) / 9) * 3;
         }
         dsp.DSP6955WReg(0x03, (ch & 0x00ff));
-        dsp.DSP6955WReg(0x02, (ch >> 8));
+        dsp.DSP6955WReg(0x02, ((ch >> 8) | 0x40));
         dsp.DSP6955Tune(mode);
     }     
 }
