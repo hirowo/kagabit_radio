@@ -1,11 +1,10 @@
 //% weight=70 icon="\uf075" color=#00FF00 block="ラジオ"
 namespace kagaradio {
-    const FM = 1;
-    const AM = 2;
+ 
     let mode : number;
     let ch : number;
 
-    enum radio_mode{
+    export enum radio_mode{
         //% block = "FM"
         FM = 1,
         //% block = "AM"
@@ -46,7 +45,7 @@ namespace kagaradio {
         dsp.DSP6955WReg(0x00, 0x80);
         dsp.DSP6955WReg(0x07, 0x31);
         dsp.DSP6955WReg(0x09, 0x07);
-        mode = FM;
+        mode = 1;
        
     }
 
@@ -54,7 +53,7 @@ namespace kagaradio {
     //% Freq.min=60.5Freq.max=90.5f
     export function Set_Freq(Freq: number) {
         let dsp = new DSP6955;
-        if (mode == FM) {
+        if (mode == 1) {
             ch = ((((Freq * 100) - 3000) * 10) / 25);
         }
         else {
