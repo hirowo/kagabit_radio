@@ -5,7 +5,7 @@ namespace kagaradio {
     let mode : number;
     let ch : number;
 
-    export enum radio_mode{
+    enum radio_mode{
         //% block = "FM"
         FM = 1,
         //% block = "AM"
