@@ -64,7 +64,7 @@ namespace kagaradio {
         dsp.DSP6955Tune(mode);
     }
 
-    //% blockId=radio_Setmode block="モード %r_mode"
+    //% blockId=radio_Setmode block="モード%r_mode"
     export function Set_mode(r_mode: radio_mode) {
     }    
 }
