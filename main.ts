@@ -8,7 +8,7 @@ namespace kagaradio {
         //% block = "FM"
         FM = 1,
         //% block = "AM"
-        AM =2
+        AM = 2
     }
 
 
@@ -64,7 +64,7 @@ namespace kagaradio {
         dsp.DSP6955Tune(mode);
     }
 
-    //% blockId=radio_Setmode block="MO^DO %r_mode %v"
+    //% blockId=radio_Setmode block="モード %r_mode"
     export function Set_mode(r_mode: radio_mode) {
         mode = r_mode;
     }    
