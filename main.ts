@@ -66,7 +66,6 @@ namespace kagaradio {
 
     //% blockId=radio_Setmode block="モード %r_mode"
     export function Set_mode(r_mode: radio_mode) {
-        mode = r_mode;
     }    
 }
 
