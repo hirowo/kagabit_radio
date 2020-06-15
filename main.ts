@@ -1,6 +1,5 @@
 //% weight=70 icon="\uf075" color=#00FF00 block="ラジオ"
 namespace kagaradio {
- 
     let mode : number;
     let ch : number;
 
@@ -23,9 +22,17 @@ namespace kagaradio {
             return buf[0];
         }
         DSP6955Tune(mode : number){
-          this.DSP6955WReg(0, 0xc0);
-          this.DSP6955WReg(0, 0xd0);
-          this.DSP6955WReg(0, 0xc0);  
+            if(mode == 1){
+                this.DSP6955WReg(0, 0xc0);
+                this.DSP6955WReg(0, 0xd0);
+                this.DSP6955WReg(0, 0xc0);
+            }
+            else {
+                this.DSP6955WReg(0, 0x80);
+                this.DSP6955WReg(0, 0xa0);
+                this.DSP6955WReg(0, 0x80);
+                
+            }  
         }
  
     }
@@ -65,7 +72,8 @@ namespace kagaradio {
 
     //% blockId=radio_Setmode block="モード %r_mode"
     export function Set_mode(r_mode: radio_mode) {
-
+        mode=r_mode;
+        
     }    
 }
 
