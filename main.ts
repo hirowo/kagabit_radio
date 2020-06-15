@@ -3,9 +3,9 @@ namespace kagaradio {
  
 
    export enum radio_mode{
-        //% block = "FM"
+        //%block="FM"
         FM = 1,
-        //% block = "AM"
+        //%block="AM"
         AM = 2
     }
 
