@@ -48,7 +48,7 @@ namespace kagaradio {
        
     }
 
-    //% blockId=radio_sestfreq block="周波数%Freq |MHz"
+    //% blockId=radio_setfreq block="周波数%Freq |MHz"
     //% Freq.min=60.5Freq.max=90.5f
     export function Set_Freq(Freq: number) {
         let dsp = new DSP6955;
@@ -73,7 +73,12 @@ namespace kagaradio {
     //% blockId=radio_Setmode block="モード %r_mode"
     export function Set_mode(r_mode: radio_mode) {
         mode=r_mode;
-        
+    }
+    //% blockId=radio_setVol block="音量%vol"
+    //% vol.min=0 vol.max=39
+    export function Set_vol(vol :number){
+        let dsp = new DSP6955;
+        dsp.DSP6955WReg(0x06,(vol<<2) | 0b0000001);
     }    
 }
 
