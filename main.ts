@@ -4,13 +4,7 @@ namespace kagaradio {
     let mode : number;
     let ch : number;
 
-    export enum radio_mode{
-        //% block = "FM"
-        FM = 1,
-        //% block = "AM"
-        AM = 2
-    }
-
+ 
 
     export class DSP6955 {
         DSP6955WReg(addr: number, cmd: number) {
@@ -62,6 +56,12 @@ namespace kagaradio {
         dsp.DSP6955WReg(0x03, (ch & 0x00ff));
         dsp.DSP6955WReg(0x02, ((ch >> 8) | 0x40));
         dsp.DSP6955Tune(mode);
+    }
+   export enum radio_mode{
+        //% block = "FM"
+        FM = 1,
+        //% block = "AM"
+        AM = 2
     }
 
     //% blockId=radio_Setmode block="モード%r_mode"
