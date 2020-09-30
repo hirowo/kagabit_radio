@@ -24,7 +24,9 @@ namespace kagaradio {
         DSP6955Tune(mode : number){
             if(mode == 1){
                 this.DSP6955WReg(0, 0xc0);
+                basic.pause(100);
                 this.DSP6955WReg(0, 0xd0);
+                basic.pause(100);
                 this.DSP6955WReg(0, 0xc0);
             }
             else {
