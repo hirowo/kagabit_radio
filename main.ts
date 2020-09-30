@@ -50,6 +50,12 @@ namespace kagaradio {
         mode = 1;
        
     }
+    //% blockId=radio_init block="ラジオパワーダウン "
+    export function off6955(): void {
+        let dsp = new DSP6955;
+        dsp.DSP6955WReg(0x00, 0x00);
+       
+    }
 
     //% blockId=radio_setfreq block="周波数%Freq |MHz"
     //% Freq.min=60.5Freq.max=90.5f
@@ -83,5 +89,6 @@ namespace kagaradio {
         let dsp = new DSP6955;
         dsp.DSP6955WReg(0x06,(vol<<2) | 0b0000001);
     }    
+
 }
 
