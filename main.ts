@@ -50,7 +50,7 @@ namespace kagaradio {
         mode = 1;
        
     }
-    //% blockId=radio_init block="ラジオパワーダウン "
+    //% blockId=radio_off block="ラジオパワーダウン "
     export function off6955(): void {
         let dsp = new DSP6955;
         dsp.DSP6955WReg(0x00, 0x00);
