@@ -2,7 +2,7 @@
 namespace kagaradio {
     let mode : number;
     let ch : number;
-
+   let pow = DigitalPin.P14;
     export class DSP6955 {
         DSP6955WReg(addr: number, cmd: number) {
             let buf: Buffer = pins.createBuffer(2);
@@ -24,10 +24,11 @@ namespace kagaradio {
         DSP6955Tune(mode : number){
             if(mode == 1){
                 this.DSP6955WReg(0, 0xc0);
-                basic.pause(100);
+                basic.pause(1);
                 this.DSP6955WReg(0, 0xd0);
-                basic.pause(100);
+                basic.pause(1);
                 this.DSP6955WReg(0, 0xc0);
+                basic.pause(1);
             }
             else {
                 this.DSP6955WReg(0, 0x80);
@@ -43,6 +44,8 @@ namespace kagaradio {
     //% blockId=radio_init block="ラジオ初期化 "
     export function Init6955(): void {
         let dsp = new DSP6955;
+        pow = 0;
+        pow = 1;
         dsp.DSP6955WReg(0x00, 0x00);
         dsp.DSP6955WReg(0x00, 0x80);
         dsp.DSP6955WReg(0x07, 0x31);
