@@ -88,7 +88,7 @@ namespace kagaradio {
         mode=r_mode;
     }
     //% blockId=radio_setVol block="音量%vol"
-    //% vol.min=0 vol.max=39
+    //% vol.min=0 vol.max=63
     export function Set_vol(vol :number){
         let dsp = new DSP6955;
         dsp.DSP6955WReg(0x06,(vol<<2) | 0b0000001);
