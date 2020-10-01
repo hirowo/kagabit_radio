@@ -44,12 +44,13 @@ namespace kagaradio {
     //% blockId=radio_init block="ラジオ初期化 "
     export function Init6955(): void {
         let dsp = new DSP6955;
-        pow = 0;
-        pow = 1;
+        pins.digitalWritePin(DigitalPin.P14, 0);
+        pins.digitalWritePin(DigitalPin.P14, 1);
+        
         dsp.DSP6955WReg(0x00, 0x00);
         dsp.DSP6955WReg(0x00, 0x80);
         dsp.DSP6955WReg(0x07, 0x31);
-        dsp.DSP6955WReg(0x09, 0x07);
+        dsp.DSP6955WReg(0x09, 0x0f);
         mode = 1;
        
     }
